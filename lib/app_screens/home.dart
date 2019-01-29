@@ -7,14 +7,38 @@ class Home extends StatelessWidget {
         child: Container(
             padding: EdgeInsets.only(left: 10.0, top: 40.0),
             alignment: Alignment.center,
-            color: Colors.deepPurple,
+            color: Colors.deepPurpleAccent,
             child: Column(
               children: <Widget>[
+                Row(children: <Widget>[
+                  Expanded(
+                      child: Text(
+                    "Spice Jet",
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontSize: 35.0,
+                        fontFamily: 'Raleway',
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white),
+                  )),
+                  Expanded(
+                      child: Text(
+                    "From Mumbai to Bangalore via New Delhi",
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontSize: 20.0,
+                        fontFamily: 'Raleway',
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white),
+                  )),
+                ]),
                 Row(
                   children: <Widget>[
                     Expanded(
                         child: Text(
-                      "Spice Jet",
+                      "Air India",
                       textDirection: TextDirection.ltr,
                       style: TextStyle(
                           decoration: TextDecoration.none,
@@ -24,38 +48,31 @@ class Home extends StatelessWidget {
                           color: Colors.white),
                     )),
                     Expanded(
-                        child: Text("Air India",
-                            textDirection: TextDirection.ltr,
-                            style: TextStyle(
-                                decoration: TextDecoration.none,
-                                fontSize: 35.0,
-                                fontFamily: 'Raleway',
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white),
-                                )),
-                    Expanded(
-                        child: Text("From Mumbai to Bangalore via New Delhi ",
-                            textDirection: TextDirection.ltr,
-                            style: TextStyle(
-                                decoration: TextDecoration.none,
-                                fontSize: 20.0,
-                                fontFamily: 'Raleway',
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white
-                                // fontStyle: FontStyle.italic
-                                ))),
-                    Expanded(
-                        child: Text("From Jaipur to Goa",
-                            textDirection: TextDirection.ltr,
-                            style: TextStyle(
-                                decoration: TextDecoration.none,
-                                fontSize: 20.0,
-                                fontFamily: 'Raleway',
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white)))
+                        child: Text(
+                      "From Jaipur to Goa",
+                      textDirection: TextDirection.ltr,
+                      style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 20.0,
+                          fontFamily: 'Raleway',
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white),
+                    )),
                   ],
-                )
+                ),
+                FlightImageAsset()
               ],
             )));
+  }
+}
+
+class FlightImageAsset extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    AssetImage assetImage = AssetImage('images/flight.png');
+    Image image = Image(image: assetImage, width: 232.0, height: 232.0);
+    return Container(
+      child: image,
+    );
   }
 }
